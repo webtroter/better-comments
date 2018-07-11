@@ -225,7 +225,6 @@ export class Parser {
 				this.delimiter = "//";
 				this.highlightMultilineComments = this.contributions.multilineComments;
 				break;
-
 			case "coffeescript":
 			case "dockerfile":
 			case "elixir":
@@ -237,6 +236,10 @@ export class Parser {
 			case "perl":
 			case "perl6":
 			case "powershell":
+				this.isBlock = true;
+				this.delimiter = "<#";
+				this.enddelimiter = "#>";
+				break;
 			case "r":
 			case "ruby":
 			case "shellscript":
